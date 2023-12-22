@@ -1,11 +1,15 @@
+import styles from "./Timeline.module.scss";
+
 export const Timeline = () => {
+  const datetime = Array.from({ length: 24 }, (_, hour) => (
+    <li key={hour} className={styles.hour}>
+      {hour < 10 ? `0${hour}:00` : `${hour}:00`}
+    </li>
+  ));
+
   return (
-    <div className="timeline">
-      {Array.from({ length: 24 }, (_, hour) => (
-        <div key={hour} className="timeline-hour">
-          {hour < 10 ? `0${hour}:00` : `${hour}:00`}
-        </div>
-      ))}
+    <div className={styles.timeline}>
+      <ul className={styles.list}>{datetime}</ul>
     </div>
   );
 };

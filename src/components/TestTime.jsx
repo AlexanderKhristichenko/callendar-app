@@ -31,42 +31,18 @@ export const TestTime = () => {
     } else if (new Date(event.startDateTime).getHours() === 1) {
       return new Date(event.startDateTime).getHours() * 35;
     } else {
-      return new Date(event.startDateTime).getHours() * 28 + 7;
+      return new Date(event.startDateTime).getHours() * 28 + 12 + 1;
     }
   };
 
   const end = (event) => {
-    if (
-      new Date(event.startDateTime).getHours() ===
-      new Date(
-        new Date(event.startDateTime).getTime() + event.duration * 60 * 1000,
-      ).getHours()
-    ) {
-      return (
-        new Date(
-          new Date(event.startDateTime).getTime() + event.duration * 60 * 1000,
-        ).getHours() + 19
-      );
-    } else if (
-      new Date(
-        new Date(event.startDateTime).getTime() + event.duration * 60 * 1000,
-      ).getHours() > 1
-    ) {
-      return (
-        new Date(
-          new Date(event.startDateTime).getTime() + event.duration * 60 * 1000,
-        ).getHours() *
-          28 -
-        new Date(event.startDateTime).getHours() * 28 +
-        13
-      );
-    } else {
-      return (
-        new Date(
-          new Date(event.startDateTime).getTime() + event.duration * 60 * 1000,
-        ).getHours() + 30
-      );
-    }
+    let timeStart = new Date(event.startDateTime).getHours();
+    let timeEnd = new Date(
+      new Date(event.startDateTime).getTime() + event.duration * 60 * 1000,
+    ).getHours();
+
+    if (timeStart === timeEnd) return (timeEnd = 30);
+    if (timeStart !== timeEnd) return timeEnd * 28 - timeStart * 28 + 15;
   };
 
   const type_1 = data

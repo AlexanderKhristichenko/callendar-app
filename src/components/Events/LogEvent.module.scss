@@ -1,0 +1,54 @@
+.event_log {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  column-gap: 15px;
+  position: absolute;
+  padding: 0 15px;
+  top: 0;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 0;
+  padding: 0;
+  overflow: hidden;
+  transition: .3s;
+
+  &:hover {
+    padding: 0 15px;
+    width: auto;
+  }
+}
+
+.event_log1 {
+  right: 0;
+  background-color: rgba($color: #008cff, $alpha: 0.2);
+  border-left: 6px solid #008cff;
+  padding: 0 15px;
+  width: auto;
+}
+
+.event_log2 {
+  right: 25%;
+  background-color: rgba($color: #ffc400, $alpha: 0.2);
+  border-left: 6px solid #ffc400;
+}
+
+.event_log3 {
+  right: 50%;
+  background-color: rgba($color: #00d440, $alpha: 0.2);
+  border-left: 6px solid #00d440;
+}
+
+.event_log4 {
+  right: 75%;
+  background-color: rgba($color: #6e0303, $alpha: 0.2);
+  border-left: 6px solid #6e0303;
+}
+
+.title {
+  font-size: 13px;
+}
+
+.time {
+  font-size: 13px;
+}
